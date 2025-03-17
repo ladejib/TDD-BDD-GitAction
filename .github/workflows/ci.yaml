@@ -21,6 +21,9 @@ jobs:
         source venv/bin/activate
         pip install pytest behave flask
 
+    - name: Set PYTHONPATH
+      run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)" >> $GITHUB_ENV
+
     - name: Run TDD Tests
       run: |
         source venv/bin/activate
